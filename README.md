@@ -1,6 +1,3 @@
-Got it! Here's the plain `README.md` content for you to copy and paste directly into your Notepad:
-
-```
 # Flask-WTF Registration Form
 
 This is a simple Flask application that demonstrates the use of Flask-WTF for form handling. It includes a registration form with various fields, such as name, email, password, gender, and country selection. The form also includes a checkbox for agreeing to terms and conditions. On form submission, the data is validated, and a success message is displayed.
@@ -79,16 +76,6 @@ flask-wtf-registration-form/
     - **Country**: Dropdown menu for country selection (Nepal, India)
     - **Agree to terms**: Checkbox (required)
 - Upon submitting the form, the server validates the data and displays a success message if everything is correct.
-
-## Example Environment File (`.env`)
-
-Here's an example of what your `.env` file might look like (do not upload it to GitHub):
-
-````
-
-FLASK_SECRET_KEY=your_random_generated_key
-
-````
 
 ## Dependencies
 
