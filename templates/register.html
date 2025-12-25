@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask-WTF Form</title>
+    <!-- Link to your CSS file -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form method="POST">
+        <!-- CSRF token -->
+        {{ form.hidden_tag() }}
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="name">{{ form.name.label }}</label>
+          {{ form.name(size=30) }} {% for error in form.name.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">{{ form.email.label }}</label>
+          {{ form.email(size=30) }} {% for error in form.email.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">{{ form.password.label }}</label>
+          {{ form.password(size=30) }} {% for error in form.password.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <label>{{ form.gender.label }}</label>
+          {% for subfield in form.gender %}
+          <div class="radio-field">{{ subfield() }} {{ subfield.label }}</div>
+          {% endfor %} {% for error in form.gender.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Country -->
+        <div class="form-group">
+          <label for="country">{{ form.country.label }}</label>
+          {{ form.country(size=30) }} {% for error in form.country.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Agree to Terms -->
+        <div class="form-group">
+          {{ form.agree() }} {{ form.agree.label }} {% for error in
+          form.agree.errors %}
+          <span class="error">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <br />
+          {{ form.submit() }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
