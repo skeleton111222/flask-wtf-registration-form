@@ -42,21 +42,12 @@ flask-wtf-registration-form/
     ```
 
 4. **Set environment variables**:
-    Create a `.env` file (this should be **not uploaded to GitHub** for security reasons).
-
-    Example `.env`:
-    ```
-    FLASK_SECRET_KEY=your_random_generated_key
-    ```
-
     You can generate a random secret key using the following Python code:
     ```python
     import secrets
     print(secrets.token_hex(16))
     ```
-
-    **Important**: Never expose your `.env` file. Add it to `.gitignore` to avoid uploading it to GitHub.
-
+    
 5. **Run the Flask application**:
     ```bash
     python app.py
